@@ -1,12 +1,14 @@
 function climbStairs(totalSteps){
-let counter = 0
- for (let climb = 0; climb <= totalSteps; climb++ ){
- counter += 1;
+let firstStep = 1
+let secondStep = 2
+let numberOfWays = 0
+ for (let climb = 3; climb <= totalSteps; climb++ ){
+ numberOfWays = firstStep + secondStep
+ firstStep = secondStep
+ secondStep = numberOfWays
  }
- for (let climbTwo = 0; climbTwo <= totalSteps; climbTwo +=2 ){
- counter += 1;
- }
- return "Number of Distinct ways to climb the stairs is " + counter;
+
+ return "Number of Distinct ways to climb the stairs is " + numberOfWays;
 }
 
 console.log(climbStairs(5));
